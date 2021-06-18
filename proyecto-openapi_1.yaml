@@ -1,0 +1,387 @@
+openapi: "3.0.3"
+info:
+  title: "proyecto API"
+  description: "proyecto API"
+  version: "1.0.0"
+servers:
+  - url: "https://proyecto"
+paths:
+  clasificacion:
+    get:
+      summary: "GET clasificacion"
+      operationId: "horasList"
+      responses:
+        200:
+          description: "OK"
+  clasificacion/listaP:
+    get:
+      summary: "GET clasificacion/listaP"
+      operationId: "trabproList"
+      responses:
+        200:
+          description: "OK"
+  clasificacion/listado:
+    get:
+      summary: "GET clasificacion/listado"
+      operationId: "pList"
+      responses:
+        200:
+          description: "OK"
+  clasificacion/listadop:
+    get:
+      summary: "GET clasificacion/listadop"
+      operationId: "pListp"
+      responses:
+        200:
+          description: "OK"
+  clasificacion/{name}:
+    get:
+      summary: "GET clasificacion/{name}"
+      operationId: "Localidadtraba"
+      parameters:
+        - name: "name"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        200:
+          description: "OK"
+  clasificacionp/{name}:
+    get:
+      summary: "GET clasificacionp/{name}"
+      operationId: "Proyectotraba"
+      parameters:
+        - name: "name"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        200:
+          description: "OK"
+  clasificaciont/{name}:
+    get:
+      summary: "GET clasificaciont/{name}"
+      operationId: "Titulaciontraba"
+      parameters:
+        - name: "name"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        200:
+          description: "OK"
+  download/{name}:
+    get:
+      summary: "GET download/{name}"
+      operationId: "getImage"
+      parameters:
+        - name: "name"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        200:
+          description: "OK"
+  localidades:
+    get:
+      summary: "GET localidades"
+      operationId: "localidadesList"
+      responses:
+        200:
+          description: "OK"
+    post:
+      summary: "POST localidades"
+      operationId: "localidadnadd"
+      parameters:
+        - name: "name"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  localidades/add:
+    post:
+      summary: "POST localidades/add"
+      operationId: "localidadesAdd"
+      responses:
+        200:
+          description: "OK"
+  localidades/detail:
+    get:
+      summary: "GET localidades/detail"
+      operationId: "localidadDetail"
+      parameters:
+        - name: "id"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  localidades/{id}:
+    put:
+      summary: "PUT localidades/{id}"
+      operationId: "localidadUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "DELETE localidades/{id}"
+      operationId: "localidadDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  login:
+    post:
+      summary: "POST login"
+      operationId: "login"
+      parameters:
+        - name: "username"
+          in: "query"
+        - name: "password"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  logout:
+    get:
+      summary: "GET logout"
+      operationId: "logout"
+      responses:
+        200:
+          description: "OK"
+  proyectos:
+    get:
+      summary: "GET proyectos"
+      operationId: "proyectsList"
+      responses:
+        200:
+          description: "OK"
+    post:
+      summary: "POST proyectos"
+      operationId: "proyectonadd"
+      parameters:
+        - name: "name"
+          in: "query"
+        - name: "horas"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  proyectos/add:
+    post:
+      summary: "POST proyectos/add"
+      operationId: "proyectoAdd"
+      responses:
+        200:
+          description: "OK"
+  proyectos/detail:
+    get:
+      summary: "GET proyectos/detail"
+      operationId: "proyectoDetail"
+      parameters:
+        - name: "id"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  proyectos/{id}:
+    put:
+      summary: "PUT proyectos/{id}"
+      operationId: "proyectoUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "DELETE proyectos/{id}"
+      operationId: "proyectoDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  rol/{id}:
+    get:
+      summary: "GET rol/{id}"
+      operationId: "roles"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  titulacion:
+    get:
+      summary: "GET titulacion"
+      operationId: "titulacionList"
+      responses:
+        200:
+          description: "OK"
+    post:
+      summary: "POST titulacion"
+      operationId: "titulacionadd"
+      parameters:
+        - name: "name"
+          in: "query"
+        - name: "age"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  titulacion/add:
+    post:
+      summary: "POST titulacion/add"
+      operationId: "titulacionAdd"
+      responses:
+        200:
+          description: "OK"
+  titulacion/detail:
+    get:
+      summary: "GET titulacion/detail"
+      operationId: "titulacionDetail"
+      parameters:
+        - name: "id"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  titulacion/{id}:
+    put:
+      summary: "PUT titulacion/{id}"
+      operationId: "titulacionUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "DELETE titulacion/{id}"
+      operationId: "titulacionDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  trabajadores:
+    get:
+      summary: "GET trabajadores"
+      operationId: "trabajadorList"
+      responses:
+        200:
+          description: "OK"
+    post:
+      summary: "POST trabajadores"
+      operationId: "trabajadornadd"
+      parameters:
+        - name: "name"
+          in: "query"
+        - name: "surname"
+          in: "query"
+        - name: "localidad"
+          in: "query"
+        - name: "titulacion"
+          in: "query"
+        - name: "proyecto"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  trabajadores/add:
+    post:
+      summary: "POST trabajadores/add"
+      operationId: "trabajadorAdd"
+      responses:
+        200:
+          description: "OK"
+  trabajadores/detail:
+    get:
+      summary: "GET trabajadores/detail"
+      operationId: "trabajadorDetail"
+      parameters:
+        - name: "id"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
+  trabajadores/{id}:
+    put:
+      summary: "PUT trabajadores/{id}"
+      operationId: "trabajadorUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+    delete:
+      summary: "DELETE trabajadores/{id}"
+      operationId: "trabajadorDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        200:
+          description: "OK"
+  upload:
+    post:
+      summary: "POST upload"
+      operationId: "imageTest"
+      parameters:
+        - name: "id"
+          in: "query"
+        - name: "entity"
+          in: "query"
+        - name: "file"
+          in: "query"
+      responses:
+        200:
+          description: "OK"
